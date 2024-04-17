@@ -109,6 +109,8 @@ def process_arguments(args):
 
 
 def main(args: argparse.Namespace) -> None:
+    print("pizza" * 50)
+
     """
     Main function for running the fastlane bot.
 
