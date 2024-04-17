@@ -109,6 +109,7 @@ def process_arguments(args):
 
 
 def main(args: argparse.Namespace) -> None:
+    print("Run cat before I eat you!")
     print("pizza" * 50)
 
     """
