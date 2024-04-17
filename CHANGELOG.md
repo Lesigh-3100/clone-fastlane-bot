@@ -2,7 +2,21 @@
 
 ## [Unreleased](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/HEAD)
 
-[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/8ba1c6eebf13a8ff8e550cb28ea86e7e286e4e43...HEAD)
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/v3.1.10...HEAD)
+
+- Bot ate my cat [\#4](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/4)
+
+- World Pizza [\#5](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/5)
+
+Merged pull requests
+
+- Merge Release candidate [\#12](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/12) ([Lesigh-3100](https://github.com/Lesigh-3100))
+- Merge Develop [\#11](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/11) ([Lesigh-3100](https://github.com/Lesigh-3100))
+- Add 5g [\#10](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/10) ([Lesigh-3100](https://github.com/Lesigh-3100))
+
+## [v3.1.10](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/v3.1.10) (2024-04-17)
+
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/8ba1c6eebf13a8ff8e550cb28ea86e7e286e4e43...v3.1.10)
 
 - Solve cat problem [\#7](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/7) ([Lesigh-3100](https://github.com/Lesigh-3100))
 
