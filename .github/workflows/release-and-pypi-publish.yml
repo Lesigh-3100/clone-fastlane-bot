@@ -40,6 +40,8 @@ jobs:
       # Checkout
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       # Check commit message
       - id: check
@@ -109,6 +111,8 @@ jobs:
           prLabel: 'Merged pull requests'
           compareLink: true
           addSections: '{"Security fixes": {"labels": ["security"]}, "Breaking changes": {"labels": ["breaking"]}}'
+          base: 'main'
+          head: 'HEAD'
 
       - name: Commit changelog update
         if: steps.check.outputs.skip != 'true'
