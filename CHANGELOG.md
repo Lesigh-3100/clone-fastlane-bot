@@ -1,8 +1,14 @@
 # Changelog
 
-## [Unreleased](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/HEAD)
+## [3.1.13](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/3.1.13) (2024-04-18)
 
-[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/v3.1.11...HEAD)
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/v3.1.12...3.1.13)
+
+- FLT Travel [\#2](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/2)
+
+## [v3.1.12](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/v3.1.12) (2024-04-18)
+
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/v3.1.11...v3.1.12)
 
 - 5G Integration [\#3](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/3)
 
