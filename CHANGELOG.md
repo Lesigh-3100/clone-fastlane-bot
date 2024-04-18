@@ -2,7 +2,19 @@
 
 ## [Unreleased](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/HEAD)
 
-[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/v3.1.10...HEAD)
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/v3.1.11...HEAD)
+
+- 5G Integration [\#3](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/3)
+
+Merged pull requests
+
+- Release candidate [\#15](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/15) ([Lesigh-3100](https://github.com/Lesigh-3100))
+- Merge Develop [\#14](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/14) ([Lesigh-3100](https://github.com/Lesigh-3100))
+- FLT [\#13](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/13) ([Lesigh-3100](https://github.com/Lesigh-3100))
+
+## [v3.1.11](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/v3.1.11) (2024-04-17)
+
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/v3.1.10...v3.1.11)
 
 - Bot ate my cat [\#4](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/4)
 
