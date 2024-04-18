@@ -97,6 +97,8 @@ jobs:
           git config --local user.name "GitHub Action"
           git add fastlane_bot/__init__.py
           git commit -m "Bump version [skip ci]"
+          git tag $NEW_VERSION
+          git push origin main --tags
 
       - name: Generate changelog
         if: steps.check.outputs.skip != 'true'
