@@ -112,6 +112,7 @@ def main(args: argparse.Namespace) -> None:
     print("Connecting to 5G")
     print("Run cat before I eat you!")
     print("pizza" * 50)
+    print("Reaching FLT now")
 
     """
     Main function for running the fastlane bot.
