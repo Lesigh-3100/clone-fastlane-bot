@@ -22,7 +22,7 @@
 #
 ################################################################################################################
 
-name: Bump Version, Generate Changelog, Create Release
+name: Label Linked Issues, Bump Version, Generate Changelog, Create Release
 
 on:
   push:
@@ -79,7 +79,41 @@ jobs:
           TENDERLY_FORK: '${{ secrets.TENDERLY_FORK }}'
           WEB3_ALCHEMY_PROJECT_ID: '${{ secrets.WEB3_ALCHEMY_PROJECT_ID }}'
           ETHERSCAN_TOKEN: '${{ secrets.ETHERSCAN_TOKEN }}'
+      - name: Label linked issues
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const github = require('@actions/github');
+            const context = github.context;
+            const prNumber = context.issue.number;
+            const prRepo = context.repo;
 
+            // Fetch the pull request to get the body and extract linked issues
+            const { data: pullRequest } = await github.rest.pulls.get({
+              owner: prRepo.owner,
+              repo: prRepo.repo,
+              pull_number: prNumber
+            });
+
+            // Regex to find linked issues in the PR description
+            const issueRegex = /(?:fixes|resolves|closes) #(\d+)/gi;
+            let match;
+            const issues = new Set();
+
+            while ((match = issueRegex.exec(pullRequest.body)) !== null) {
+              issues.add(match[1]);
+            }
+
+            // Apply labels to each linked issue
+            for (const issueNumber of issues) {
+              await github.rest.issues.addLabels({
+                owner: prRepo.owner,
+                repo: prRepo.repo,
+                issue_number: issueNumber,
+                labels: ['merged to main']
+              });
+            }
       - name: Bump version and set output
         if: steps.check.outputs.skip != 'true'
         id: bump_version_and_set_output
@@ -106,7 +140,7 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           output: 'CHANGELOG.md'
-          configureSections: '{"Merged pull requests": {"labels": ["pull-request","Merge pull request"]}, "Fixed bugs": {"labels": ["bug","bugfix"]}, "Implemented enhancements": {"labels": ["enhancement","feature"]}, "Closed issues": {"labels": ["closed-issue"]}}'
+          configureSections: '{"Merged pull requests": {"labels": ["pull-request","Merge pull request"]}, "Fixed bugs": {"labels": ["bug","bugfix"]}, "Implemented enhancements": {"labels": ["enhancement","feature"]}, "Closed issues": {"labels": ["merged to main"]}}'
           bugsLabel: 'Fixed bugs'
           enhancementLabel: 'Implemented enhancements'
           issuesLabel: 'Closed issues'
@@ -115,6 +149,7 @@ jobs:
           addSections: '{"Security fixes": {"labels": ["security"]}, "Breaking changes": {"labels": ["breaking"]}}'
           base: 'main'
           head: 'HEAD'
+          excludeLabels: 'unmerged'
 
       - name: Commit changelog update
         if: steps.check.outputs.skip != 'true'
