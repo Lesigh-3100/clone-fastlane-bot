@@ -100,6 +100,35 @@ jobs:
           git tag $NEW_VERSION
           git push origin main --tags
 
+      - name: Label linked issues as merged
+        if: github.event.pull_request.merged == true && github.ref == 'refs/heads/main'
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const github = require('@actions/github');
+            const context = github.context;
+            const pullRequest = context.payload.pull_request;
+            
+            // Regex to extract linked issue numbers from PR body
+            const issueRegex = /(?:fixes|resolves|closes) #(\d+)/gi;
+            let match;
+            const issueNumbers = [];
+            
+            while ((match = issueRegex.exec(pullRequest.body)) !== null) {
+              issueNumbers.push(match[1]);
+            }
+            
+            // Add a label to each linked issue
+            for (const issueNumber of issueNumbers) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                labels: ['merged to main']
+              });
+            }
+
       - name: Generate changelog
         if: steps.check.outputs.skip != 'true'
         uses: heinrichreimer/github-changelog-generator-action@v2.3
