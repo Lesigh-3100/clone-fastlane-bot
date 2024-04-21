@@ -1,8 +1,28 @@
 # Changelog
 
+## [3.1.17](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/3.1.17) (2024-04-21)
+
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/3.1.16...3.1.17)
+
+- Bug the bugs [\#31](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/31)
+- bug the bugs [\#33](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/33) ([Lesigh-3100](https://github.com/Lesigh-3100))
+
+- Print excessive logs [\#30](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/30)
+- support lunar landing [\#28](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/28) ([Lesigh-3100](https://github.com/Lesigh-3100))
+
+Merged pull requests
+
+- Release candidate [\#36](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/36) ([Lesigh-3100](https://github.com/Lesigh-3100))
+- Develop [\#34](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/34) ([Lesigh-3100](https://github.com/Lesigh-3100))
+- Develop [\#32](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/32) ([Lesigh-3100](https://github.com/Lesigh-3100))
+
 ## [3.1.16](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/3.1.16) (2024-04-21)
 
-[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/3.1.15...3.1.16)
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/v3.1.16...3.1.16)
+
+## [v3.1.16](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/v3.1.16) (2024-04-21)
+
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/3.1.15...v3.1.16)
 
 ## [3.1.15](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/3.1.15) (2024-04-21)
 
