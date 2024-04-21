@@ -1,12 +1,38 @@
 # Changelog
 
+## [3.1.16](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/3.1.16) (2024-04-21)
+
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/3.1.15...3.1.16)
+
+## [3.1.15](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/3.1.15) (2024-04-21)
+
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/v3.1.15...3.1.15)
+
+## [v3.1.15](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/v3.1.15) (2024-04-21)
+
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/3.1.14...v3.1.15)
+
+- Raining Trash Cans [\#16](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/16)
+- Raining trash cans [\#26](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/26) ([Lesigh-3100](https://github.com/Lesigh-3100))
+
+- Lunar Landing [\#25](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/25)
+
+Merged pull requests
+
+- Release candidate [\#29](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/29) ([Lesigh-3100](https://github.com/Lesigh-3100))
+- Develop [\#27](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/27) ([Lesigh-3100](https://github.com/Lesigh-3100))
+
 ## [3.1.14](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/3.1.14) (2024-04-18)
 
-[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/3.1.13...3.1.14)
-
-- Parking problem [\#18](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/18)
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/v3.1.14...3.1.14)
 
 - Fusion [\#17](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/17)
+
+## [v3.1.14](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/v3.1.14) (2024-04-18)
+
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/3.1.13...v3.1.14)
+
+- Parking problem [\#18](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/18)
 
 Merged pull requests
 

@@ -79,41 +79,7 @@ jobs:
           TENDERLY_FORK: '${{ secrets.TENDERLY_FORK }}'
           WEB3_ALCHEMY_PROJECT_ID: '${{ secrets.WEB3_ALCHEMY_PROJECT_ID }}'
           ETHERSCAN_TOKEN: '${{ secrets.ETHERSCAN_TOKEN }}'
-      - name: Label linked issues
-        uses: actions/github-script@v5
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const github = require('@actions/github');
-            const context = github.context;
-            const prNumber = context.issue.number;
-            const prRepo = context.repo;
-
-            // Fetch the pull request to get the body and extract linked issues
-            const { data: pullRequest } = await github.rest.pulls.get({
-              owner: prRepo.owner,
-              repo: prRepo.repo,
-              pull_number: prNumber
-            });
-
-            // Regex to find linked issues in the PR description
-            const issueRegex = /(?:fixes|resolves|closes) #(\d+)/gi;
-            let match;
-            const issues = new Set();
-
-            while ((match = issueRegex.exec(pullRequest.body)) !== null) {
-              issues.add(match[1]);
-            }
-
-            // Apply labels to each linked issue
-            for (const issueNumber of issues) {
-              await github.rest.issues.addLabels({
-                owner: prRepo.owner,
-                repo: prRepo.repo,
-                issue_number: issueNumber,
-                labels: ['merged to main']
-              });
-            }
+          
       - name: Bump version and set output
         if: steps.check.outputs.skip != 'true'
         id: bump_version_and_set_output
@@ -133,6 +99,35 @@ jobs:
           git commit -m "Bump version [skip ci]"
           git tag $NEW_VERSION
           git push origin main --tags
+
+      - name: Label linked issues as merged
+        if: github.event.pull_request.merged == true && github.ref == 'refs/heads/main'
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const github = require('@actions/github');
+            const context = github.context;
+            const pullRequest = context.payload.pull_request;
+            
+            // Regex to extract linked issue numbers from PR body
+            const issueRegex = /(?:fixes|resolves|closes) #(\d+)/gi;
+            let match;
+            const issueNumbers = [];
+            
+            while ((match = issueRegex.exec(pullRequest.body)) !== null) {
+              issueNumbers.push(match[1]);
+            }
+            
+            // Add a label to each linked issue
+            for (const issueNumber of issueNumbers) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                labels: ['merged to main']
+              });
+            }
 
       - name: Generate changelog
         if: steps.check.outputs.skip != 'true'
