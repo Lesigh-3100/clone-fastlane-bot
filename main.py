@@ -117,7 +117,7 @@ def main(args: argparse.Namespace) -> None:
     print("Run cat before I eat you!")
     print("pizza" * 50)
     print("Reaching FLT now")
-
+    print("buggy")
     """
     Main function for running the fastlane bot.
 
