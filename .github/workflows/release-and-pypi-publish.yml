@@ -82,33 +82,31 @@ jobs:
       - name: Label linked issues
         uses: actions/github-script@v5
         with:
-          github-token: ${{ secrets.GH_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const { context, getOctokit } = require('@actions/github');
-            const github = getOctokit(process.env.GITHUB_TOKEN);  // Using the authenticated client
-            
-            const prNumber = context.issue.number;
-            const prRepo = context.repo;
-            
+            const octokit = require('@actions/github').getOctokit(process.env.GITHUB_TOKEN);
+            const prNumber = github.context.payload.pull_request.number;  // Adjusted to access context properly
+            const prRepo = github.context.repo;
+
             // Fetch the pull request to get the body and extract linked issues
-            const pullRequest = await github.rest.pulls.get({
+            const pullRequest = await octokit.rest.pulls.get({
               owner: prRepo.owner,
               repo: prRepo.repo,
               pull_number: prNumber
             });
-            
+
             // Regex to find linked issues in the PR description
             const issueRegex = /(?:fixes|resolves|closes) #(\d+)/gi;
             let match;
             const issues = new Set();
-            
+
             while ((match = issueRegex.exec(pullRequest.data.body)) !== null) {
               issues.add(match[1]);
             }
-            
+
             // Apply labels to each linked issue
             for (const issueNumber of issues) {
-              await github.rest.issues.addLabels({
+              await octokit.rest.issues.addLabels({
                 owner: prRepo.owner,
                 repo: prRepo.repo,
                 issue_number: issueNumber,
