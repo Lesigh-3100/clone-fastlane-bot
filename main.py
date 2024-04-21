@@ -109,6 +109,7 @@ def process_arguments(args):
 
 
 def main(args: argparse.Namespace) -> None:
+    print("We're going to the moooooooon. But safely!")
     print("added shielding against raining trashcans")
     print("generating Fusion")
     print("Park anywhere you want")
@@ -116,7 +117,7 @@ def main(args: argparse.Namespace) -> None:
     print("Run cat before I eat you!")
     print("pizza" * 50)
     print("Reaching FLT now")
-
+    print("buggy")
     """
     Main function for running the fastlane bot.
 
