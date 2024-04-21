@@ -1,8 +1,16 @@
 # Changelog
 
+## [3.1.16](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/3.1.16) (2024-04-21)
+
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/3.1.15...3.1.16)
+
 ## [3.1.15](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/3.1.15) (2024-04-21)
 
-[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/3.1.14...3.1.15)
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/v3.1.15...3.1.15)
+
+## [v3.1.15](https://github.com/Lesigh-3100/clone-fastlane-bot/tree/v3.1.15) (2024-04-21)
+
+[Full Changelog](https://github.com/Lesigh-3100/clone-fastlane-bot/compare/3.1.14...v3.1.15)
 
 - Raining Trash Cans [\#16](https://github.com/Lesigh-3100/clone-fastlane-bot/issues/16)
 - Raining trash cans [\#26](https://github.com/Lesigh-3100/clone-fastlane-bot/pull/26) ([Lesigh-3100](https://github.com/Lesigh-3100))
