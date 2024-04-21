@@ -118,6 +118,7 @@ def main(args: argparse.Namespace) -> None:
     print("pizza" * 50)
     print("Reaching FLT now")
     print("buggy")
+    print("loggy log log log log log")
     """
     Main function for running the fastlane bot.
 
